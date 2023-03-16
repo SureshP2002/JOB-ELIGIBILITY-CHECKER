@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>EligibilityChecker</title>
+</head>
+<body>
+    <div id="wrapper">
+        <h2>Check Eligibility</h2>
+        <div class="inputdiv">
+            <select id="input">
+                <option value="Illiterate">Illiterate</option>
+                <option value="HighSchool">HighSchool</option>
+                <option value="PG">PG</option>
+                <option value="UG">UG</option>
+                <option value="Doctrate">Doctrate</option>
+           </select>
+        </div>
+        <div>
+            <button type="submit" onclick="find()">Check ELigibilty</button>
+
+        </div>
+        <div id="result">
+
+        </div>
+        
+    </div>
+    <script>
+        function find(){
+    const input = document.getElementById("input")
+    const study = input.options[input.selectedIndex].value
+     let ans;
+     switch(study)
+     {
+        case 'HighSchool':
+            ans=1
+            break;
+        case 'UG':
+            ans=1
+            break;
+        default:ans=0
+        break
+     }
+     ans=ans==0?"Not Eligible for job":"ELigible for job"
+     document.getElementById("result").innerHTML=ans
+     
+
+        }
+    </script>
+    
+</body>
+</html>
